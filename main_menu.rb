@@ -1,3 +1,8 @@
+require_relative "three_cups"
+require_relative "card_game"
+require_relative "dice_game"
+require_relative "rock_paper_scissors"
+
 class Main_menu
 
   attr_accessor :player
@@ -38,7 +43,7 @@ class Main_menu
   end  
 
   def rock_paper_scissors
-    puts "I'm working!"
+    
   end
 
   def dice_game
