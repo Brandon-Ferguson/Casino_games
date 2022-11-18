@@ -1,5 +1,5 @@
-require_relative "player.rb"
-require_relative "casino_games.rb"
+require_relative "player"
+require_relative "main_menu"
 
 class App
   attr_accessor :player

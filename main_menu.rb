@@ -1,11 +1,7 @@
-require_relative "player.rb"
-require_relative "App.rb"
-
 class Main_menu
 
   attr_accessor :player
   
-
   def initialize(player)
     @player = player
     main_menu
