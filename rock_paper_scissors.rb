@@ -36,7 +36,7 @@ class Rock_paper_scissors
     if player_choice == "Rock"
       if computer_choice == "Scissors"
         puts "Congrats! you win!"
-        puts "you have gained $#{@player_bet}"
+        puts "you have gained $#{@player_bet * 2}"
         @player.change_money(@player_bet * 2)
       elsif computer_choice == "Rock"
         puts "Tie!"
@@ -49,7 +49,7 @@ class Rock_paper_scissors
     elsif player_choice == "Paper"
       if computer_choice == "Rock"
         puts "Congrats! you win!"
-        puts "you have gained $#{@player_bet}"
+        puts "you have gained $#{@player_bet * 2}"
         @player.change_money(@player_bet * 2)
       elsif computer_choice == "Paper"
         puts "Tie!"
@@ -62,7 +62,7 @@ class Rock_paper_scissors
     elsif player_choice == "Scissors"
       if computer_choice == "Paper"
         puts "Congrats! you win!"
-        puts "you have gained $#{@player_bet}"
+        puts "you have gained $#{@player_bet * 2}"
         @player.change_money(@player_bet * 2)
       elsif computer_choice == "Scissors"
         puts "Tie!"
