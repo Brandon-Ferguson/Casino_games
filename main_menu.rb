@@ -15,8 +15,11 @@ class Main_menu
   def main_menu
     puts "\n" * 2
     puts "Hello Welcome to our casino #{player.name}"
+    puts ""
+    puts "Here, we will place bets, if you lose the game you lose your bet. but if you win we give you double"
+    puts "current balance = #{@player.money}"
     puts "Please select one of the following games: "
-    puts "1) Rock. Paper, Scissors"
+    puts "1) Rock, Paper, Scissors"
     puts "2) Dice"
     puts "3) Cards"
     puts "4) Three Cups"
@@ -26,7 +29,7 @@ class Main_menu
 
     case user_choice
     when 1
-      rock_paper_scissors
+      Rock_paper_scissors.new(@player)
     when 2
       dice_game
     when 3
@@ -41,21 +44,4 @@ class Main_menu
       main_menu
     end
   end  
-
-  def rock_paper_scissors
-    
-  end
-
-  def dice_game
-    puts "I'm working!"
-  end
-
-  def card_game
-    puts "I'm working!"
-  end
-
-  def three_cups  
-    puts "I'm working!"
-  end
-
 end
