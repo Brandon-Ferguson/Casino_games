@@ -47,8 +47,7 @@ class Main_menu
   end
 
   def dice_game
-    get_bet
-    d = Dice.new(@user_bet, @player)
+    d = Dice.new(@player)
     main_menu
   end
 
@@ -59,19 +58,4 @@ class Main_menu
   def three_cups  
     puts "I'm working!"
   end
-
-  def get_bet
-    puts "Your current balance is $#{player.money}"
-    puts "How much would you like to bet?"
-    @user_bet = gets.strip.to_i
-
-    if @user_bet <= player.money
-      puts "Valid bet..."
-    else
-      puts "Invalid bet, please try again."
-      puts 
-      get_bet
-    end
-  end
-
 end
