@@ -45,4 +45,21 @@ class Main_menu
       main_menu
     end
   end  
+
+  def rock_paper_scissors
+    
+  end
+
+  def dice_game
+    d = Dice.new(@player)
+    main_menu
+  end
+
+  def card_game
+    puts "I'm working!"
+  end
+
+  def three_cups  
+    puts "I'm working!"
+  end
 end

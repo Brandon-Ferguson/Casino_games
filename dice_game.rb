@@ -1,7 +1,7 @@
 class Dice
-  def initialize(bet, player)
+  def initialize(player)
     @player = player
-    @user_bet = bet
+    get_bet
     game_menu
   end
 
@@ -43,10 +43,24 @@ class Dice
   def calc_win
     if @die1 + @die2 > 8
       puts "You win!! Your bet has been doubled."
-      @player.change_money(@user_bet)
+      @player.change_money((@user_bet * 2))
     else
       puts "You lose! Your bet has been subtracted from your account. "
       @player.change_money(-@user_bet)
+    end
+  end
+
+  def get_bet
+    puts "Your current balance is $#{@player.money}"
+    puts "How much would you like to bet?"
+    @user_bet = gets.strip.to_i
+
+    if @user_bet <= @player.money
+      puts "Valid bet..."
+    else
+      puts "Invalid bet, please try again."
+      puts 
+      get_bet
     end
   end
 end
