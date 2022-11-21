@@ -51,7 +51,7 @@ class Main_menu
   end
 
   def dice_game
-    d = Dice.new(@player)
+    game = Dice.new(@player)
     main_menu
   end
 
@@ -60,6 +60,7 @@ class Main_menu
   end
 
   def three_cups  
-    puts "I'm working!"
+    game = ThreeCups.new(@player)
+    main_menu
   end
 end
