@@ -1,5 +1,5 @@
 require_relative "three_cups"
-require_relative "card_game"
+require_relative "card_deck"
 require_relative "dice_game"
 require_relative "rock_paper_scissors"
 
@@ -33,7 +33,7 @@ class Main_menu
     when 2
       dice_game
     when 3
-      card_game
+      Deck.new(@player)
     when 4
       three_cups
     when 5
