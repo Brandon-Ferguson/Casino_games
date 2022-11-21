@@ -16,7 +16,7 @@ class Main_menu
     puts "\n" * 2
     puts "Hello Welcome to our casino #{player.name}"
     puts "Please select one of the following games: "
-    puts "1) Rock. Paper, Scissors"
+    puts "1) Rock, Paper, Scissors"
     puts "2) Dice"
     puts "3) Cards"
     puts "4) Three Cups"
@@ -47,7 +47,9 @@ class Main_menu
   end
 
   def dice_game
-    puts "I'm working!"
+    get_bet
+    d = Dice.new(@user_bet, @player)
+    main_menu
   end
 
   def card_game
@@ -56,6 +58,20 @@ class Main_menu
 
   def three_cups  
     puts "I'm working!"
+  end
+
+  def get_bet
+    puts "Your current balance is $#{player.money}"
+    puts "How much would you like to bet?"
+    @user_bet = gets.strip.to_i
+
+    if @user_bet <= player.money
+      puts "Valid bet..."
+    else
+      puts "Invalid bet, please try again."
+      puts 
+      get_bet
+    end
   end
 
 end
