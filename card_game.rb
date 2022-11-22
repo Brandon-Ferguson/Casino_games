@@ -6,10 +6,9 @@ class Card_Game
   @@deck = Deck.new()
 
   attr_accessor :player
-
   def initialize(player)
-    game_menu
     @player = player
+    game_menu
   end
 
   def game_menu
