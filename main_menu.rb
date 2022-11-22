@@ -1,5 +1,5 @@
 require_relative "three_cups"
-require_relative "card_deck"
+require_relative "card_game"
 require_relative "dice_game"
 require_relative "rock_paper_scissors"
 
