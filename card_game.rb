@@ -22,6 +22,10 @@ class Card_Game
   end
 
   def player_draw
+    p @cards[1]
+  end
+
+  def computer_draw
 
   end
 
@@ -47,21 +51,24 @@ class Card_Game
 
   def game_start
     ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
-    puts "what is your guess"
-    go_fish_guess = gets.strip
-    ranks.each do |rank|
-      p rank
-      if go_fish_guess != rank
-        puts "error, please enter in a correct card"
-      else
-        @computer_hand.each_with_index do |rank, i|
-          if go_fish_guess == card[rank]
-            @player_hand.insert_at(i, card)
-            @computer_hand.delete_at(i)
-          end
-        end
-      end
-    end
+    shuffle_cards
+    player_draw
+
+
+    # puts "what is your guess"
+    # go_fish_guess = gets.strip
+    # ranks.each do |rank|
+    #   if go_fish_guess != rank
+    #     puts "error, please enter in a correct card"
+    #   else
+    #     @computer_hand.each_with_index do |card, i|
+    #       if go_fish_guess == card[rank]
+    #         @player_hand.insert_at(i, card)
+    #         @computer_hand.delete_at(i)
+    #       end
+    #     end
+    #   end
+    # end
   end
 end
 
