@@ -31,11 +31,13 @@ class Main_menu
     when 1
       Rock_paper_scissors.new(@player)
     when 2
-      dice_game
+      game = Dice.new(@player)
+      main_menu
     when 3
       card_game
     when 4
-      three_cups
+      game = ThreeCups.new(@player)
+      main_menu
     when 5
       puts "Goodbye!"
       exit
