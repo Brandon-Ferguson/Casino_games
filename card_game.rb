@@ -1,36 +1,19 @@
+require_relative 'deck'
+
 class Card_Game
 
-  @player_hand = []
   @computer_hand = []
+  @@deck = Deck.new()
 
-  attr_accessor :cards, :player
+  attr_accessor :player
 
-  def initialize(cards, player)
-    @cards = cards
-    @player = player
+  def initialize(player)
     game_menu
-  end
-
-  def shuffle_cards
-    @cards.shuffle
-  end
-   
-  def display_cards
-    @cards.shuffle.each do |card|
-      puts "#{card.rank} #{card.suit} (#{card.color})"
-    end
-  end
-
-  def player_draw
-    p @cards[1]
-  end
-
-  def computer_draw
-
+    @player = player
   end
 
   def game_menu
-    puts "Hello, Welcome to our card game"
+    puts "Hello #{player.name}, Welcome to our card game"
     puts "We will be playing Go-Fish"
     puts ""
     puts "You start with 7 cards and will ask your opponent if they have a certain card (A - King)"
@@ -51,8 +34,12 @@ class Card_Game
 
   def game_start
     ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
-    shuffle_cards
-    player_draw
+    @@deck.seven_card_hand.each do |card|
+
+      puts "#{card.rank}"
+
+    end
+    
 
 
     # puts "what is your guess"
