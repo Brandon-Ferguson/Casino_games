@@ -40,24 +40,4 @@ class Card_Game
 
 
   end
-    
-
-
-    
-    # puts "what is your guess"
-    # go_fish_guess = gets.strip
-    # ranks.each do |rank|
-    #   if go_fish_guess != rank
-    #     puts "error, please enter in a correct card"
-    #   else
-    #     @computer_hand.each_with_index do |card, i|
-    #       if go_fish_guess == card[rank]
-    #         @player_hand.insert_at(i, card)
-    #         @computer_hand.delete_at(i)
-    #       end
-    #     end
-    #   end
-    # end
 end
-
-
