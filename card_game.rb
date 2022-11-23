@@ -1,10 +1,7 @@
 require_relative 'deck'
 
 class Card_Game
-
-  @computer_hand = []
-  @@deck = Deck.new()
-
+  @@deck = Deck.new
   attr_accessor :player
   def initialize(player)
     @player = player
@@ -25,6 +22,9 @@ class Card_Game
     if do_i_play == "no"
       Main_menu.new(@player)
     else
+      @@deck.computer_start_seven
+      @@deck.player_start_seven
+      puts "Lets begin the game!"
       game_start
     end
   end
@@ -32,15 +32,18 @@ class Card_Game
 
 
   def game_start
-    ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
-    @@deck.seven_card_hand.each do |card|
+    puts "What is your guess?"
 
-      puts "#{card.rank}"
+    player_guess = gets.strip
+    @@deck.compare_player_to_computer_hand(player_guess)
 
-    end
+
+
+  end
     
 
 
+    
     # puts "what is your guess"
     # go_fish_guess = gets.strip
     # ranks.each do |rank|
@@ -55,7 +58,6 @@ class Card_Game
     #     end
     #   end
     # end
-  end
 end
 
 
