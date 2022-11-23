@@ -71,26 +71,5 @@ class Deck
     puts "#{@cards.count}"
   end
 
-  def compare_player_to_computer_hand(player_guess)
-    beginning_count = @player_hand.count
-    @computer_hand.each_with_index do |card, i|
-      if player_guess == card.rank
-        take_card = card
-        @player_hand << take_card
-        @computer_hand.delete_at(i)
-      else
-        do_nothing
-      end
-    end
-    if @player_hand.count > beginning_count
-      puts "Congrats you gained #{@player_hand.count - beginning_count} cards!"
-    else
-      puts "Sorry, Go-Fish"
-    end
-  end
-
-  def do_nothing
-  end
-
 
 end
