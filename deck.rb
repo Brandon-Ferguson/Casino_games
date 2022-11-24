@@ -10,7 +10,6 @@ class Deck
     generate_deck
   end
 
-
   def generate_deck
     @suits.each do |suit|
       @ranks.size.times do |i|
@@ -42,7 +41,6 @@ class Deck
     return @player_hand
   end
   
-  
   def computer_start_seven
     @computer_hand = []
     shuffle_cards
@@ -71,5 +69,16 @@ class Deck
     puts "#{@cards.count}"
   end
 
+  def single_draw_card
+    @drawn_card = []
+    random_card = @cards.sample
+      @drawn_card << random_card
+      @cards.each_with_index do |card, i|
+        if random_card == card
+          @cards.delete_at(i)
+        end
+      end
+    return @drawn_card
+  end
 
 end

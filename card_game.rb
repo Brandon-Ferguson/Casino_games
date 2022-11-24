@@ -4,6 +4,8 @@ class Card_Game
   @@deck = Deck.new
   @computer_hand = []
   @player_hand = []
+  @drawn_card = []
+  @@ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
   attr_accessor :player
   def initialize(player)
     @player = player
@@ -31,13 +33,16 @@ class Card_Game
     end
   end
 
-
-
   def game_start
+    @player_hand.sort_by{ |info| info.rank }.each do |card|
+      puts card.rank
+    end
     puts "What is your guess?"
     player_guess = gets.strip
+    puts ""
     compare_player_to_computer_hand(player_guess)
-
+    computer_turn
+    game_start
   end
 
   def compare_player_to_computer_hand(player_guess)
@@ -53,12 +58,46 @@ class Card_Game
     end
     if @player_hand.count > beginning_count
       puts "Congrats you gained #{@player_hand.count - beginning_count} cards!"
-      puts "Since you go it right go again!"
+      puts "Since you go it right, go again!"
       game_start
     else
       puts "Sorry, Go-Fish"
+      @drawn_card = @@deck.single_draw_card
+      @player_hand << @drawn_card[0]
+      @drawn_card.each do |card|
+        puts "you have drawn a #{card.rank}"
+        puts "----------------------"
+        puts "\n" * 3
+      end
+      @drawn_card.clear
     end
-    
+  end
+
+  def computer_turn
+    beginning_count = @computer_hand.count
+    computer_guess = @@ranks.sample
+    puts "My guess is: #{computer_guess}"
+    @player_hand.each_with_index do |card, i|
+      if computer_guess == card.rank
+        take_card = card
+        @computer_hand << card
+        @player_hand.delete_at(i)
+      else
+        do_nothing
+      end
+    end
+    if @computer_hand.count > beginning_count
+      puts "Bummer you have lost #{@computer_hand.count - beginning_count}: #{computer_guess}"
+      puts "Since we got it right we will go again"
+      computer_turn
+    else
+      puts "Go-fish"
+      @drawn_card = @@deck.single_draw_card
+      @computer_hand << @drawn_card[0]
+      puts "we have drawn a card, your turn"
+      @drawn_card.clear
+    end
+    game_start
   end
 
   def do_nothing
