@@ -143,7 +143,7 @@ class Card_Game
         counter += 1
         if counter == 4
           @@player_score += 1
-          puts "Player score has increased by one! you collected four: #{card.rank}"
+          puts "Player score has increased by one! you collected four: #{card.rank}s"
           @player_hand.each_with_index do |del1, l|
             @player_hand.each do |del2|
               @player_hand.each do |del3|
@@ -175,7 +175,7 @@ class Card_Game
           counter += 1
             if counter == 4
               @@computer_score += 1
-              puts "Computer score has increased by one! we collected four: #{card.rank}"
+              puts "Computer score has increased by one! we collected four: #{card.rank}s"
               @computer_hand.each_with_index do |del1, l|
                 @computer_hand.each do |del2|
                   @computer_hand.each do |del3|
