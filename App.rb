@@ -21,7 +21,7 @@ class App
       @player = Player.new(name, age, money)
       Main_menu.new(@player)
     else
-      puts "Sorry, goodbye!"
+      puts "Sorry, you are too young. Goodbye!"
       exit
     end
   end
