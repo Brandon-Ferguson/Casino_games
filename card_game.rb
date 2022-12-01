@@ -36,13 +36,6 @@ class Card_Game
   end
 
   def game_start
-    @player_hand.sort_by{ |info| info.rank }.each do |card|
-      puts card.rank
-    end
-    puts ""
-    @computer_hand.sort_by{ |info| info.rank }.each do |card|
-      puts card.rank
-    end
     puts "Computer score: #{@@computer_score}"
     puts "Player score: #{@@player_score}"
     puts "What is your guess?"
