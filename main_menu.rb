@@ -3,6 +3,7 @@ require_relative "card_game"
 require_relative "dice_game"
 require_relative "rock_paper_scissors"
 
+
 class Main_menu
 
   attr_accessor :player
@@ -34,7 +35,7 @@ class Main_menu
       game = Dice.new(@player)
       main_menu
     when 3
-      card_game
+      Card_Game.new(@player)
     when 4
       game = ThreeCups.new(@player)
       main_menu
@@ -46,4 +47,22 @@ class Main_menu
       main_menu
     end
   end  
+
+  def rock_paper_scissors
+    
+  end
+
+  def dice_game
+    game = Dice.new(@player)
+    main_menu
+  end
+
+  def card_game
+    puts "I'm working!"
+  end
+
+  def three_cups  
+    game = ThreeCups.new(@player)
+    main_menu
+  end
 end

@@ -9,7 +9,7 @@ class Rock_paper_scissors
 
   def game_menu
     puts "\n" * 2
-    puts "Hello #{player.name}, welcome to rock, paper, scissors"
+    puts "Hello #{@player.name}, welcome to rock, paper, scissors"
     puts "would you like to play? yes or no"
     confirm_play = gets.strip.capitalize
     if confirm_play == "No"
